@@ -2,11 +2,5 @@
 
 from random import randint
 
-spisok = [randint(0, 100) for _ in range(int(input('Введите длину списка: ')))]
-print(spisok)
-count = 0
-for i in spisok:
-    if i % 3 == 0 and i % 7 != 0:
-        print(i, end=', ')
-        count += 1
-print(f'Количество чисел в списке кратных 3, но не кратных 7 = {count}')
+print(spisok := [randint(0, 100) for _ in range(int(input('Введите длину списка: ')))])
+print(f'Количество чисел в списке кратных 3, но не кратных 7 = {len([i for i in spisok if i % 3 == 0 and i % 7 != 0])}')
